@@ -12,24 +12,37 @@
   <div class="wrapper">
       <header><h1>HangMan</h1></header>
 
-      <section class="leftBox"><img src="images/hangman.svg" alt="HangMan" /></section>
+      <div class="leftBox"><img src="images/hangman.svg" alt="HangMan" /></div>
 
-      <section class="rightBox">
-        <h3>rätt gissningar ul, array, loop</h3</h3>
-      <ul id="incorretGuessList"></ul>
-      </section>
+      <div class="rightBox">
+        <!-- //korrekta gissningar -->
+      <ul>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+        <li>d</li>
+        <li>e</li>
+      </ul>
+      </div>
      
-      <section class="bottomBox">
-        <h3> Felaktiga gissningar här ul, array, loop</h3>
-        <ul id="correctGuessList"></ul>
-      </section>
+      <div class="bottomBox">
+        <!-- Felgissnigar -->
+        <ul>
+          <li>a</li>
+          <li>b</li>
+          <li>c</li>
+          <li>d</li>
+          <li>e</li>
+          <li>f</li>
+        </ul>
+      </div>
       
-      <section class="userInput">
+      <div class="userInput">
         <button id="randomWordButton">Slumpa ett ord och starta spelet!</button>
         <input  id="letterInput" type="text" pattern="[a-öA-Ö]" maxlength="1" placeholder="Ange bokstav">
         <button id="guessButton">Gissa</button>
         
        
-      </section>
+      </div>
   </div>
 </html>
