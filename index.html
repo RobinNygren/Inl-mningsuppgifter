@@ -10,7 +10,7 @@
 
 <body>
   <div class="wrapper">
-      <header><h1>..HangMan..</h1></header>
+      <header><h1>HangMan</h1></header>
 
       <main><img src="images/hangman.svg" alt="" /></main>
 
@@ -25,10 +25,11 @@
       </section>
       
       <section class = "userInput">
-        <button id="randomWordButton">Slumpa ett ord</button>
+        <button id="randomWordButton">Slumpa ett ord och starta spelet!</button>
+        <input type="text" id="letterInput" pattern="[a-öA-Ö]" maxlength="1" placeholder="Ange bokstav">
         <button id="guessButton">Gissa</button>
         
-        <input type="text" id="letterInput" pattern="[a-öA-Ö]" maxlength="1" placeholder="Bokstav...">
+       
       </section>
   </div>
 </html>
