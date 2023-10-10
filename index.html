@@ -12,21 +12,21 @@
   <div class="wrapper">
       <header><h1>HangMan</h1></header>
 
-      <main><img src="images/hangman.svg" alt="" /></main>
+      <section class="leftBox"><img src="images/hangman.svg" alt="HangMan" /></section>
 
-      <section class = "incorrectGuess">
+      <section class="rightBox">
         <h3>Felaktiga gissningar här ul, array, loop</h3>
-      <ul id="wronGuessList"></ul>
+      <ul id="incorretGuessList"></ul>
       </section>
       
-      <section class = "correctGuess">
+      <section class="bottomBox">
         <h2>rätt gissningar ul, array, loop</h2>
         <ul id="correctGuessList"></ul>
       </section>
       
-      <section class = "userInput">
+      <section class="userInput">
         <button id="randomWordButton">Slumpa ett ord och starta spelet!</button>
-        <input type="text" id="letterInput" pattern="[a-öA-Ö]" maxlength="1" placeholder="Ange bokstav">
+        <input  id="letterInput" type="text" pattern="[a-öA-Ö]" maxlength="1" placeholder="Ange bokstav">
         <button id="guessButton">Gissa</button>
         
        
