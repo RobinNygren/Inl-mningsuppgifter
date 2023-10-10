@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <script src="javascript.js"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>hängaGubbe</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header><h1>Hänga Gubbe</h1></header>
+
+    <main><img src="images/hangman.svg" alt="" /></main>
+
+    <section class = "incorrectGuess"><h3>Felaktiga gissningar här ul, array, loop</h3>
+    <ul id="wrongGuessList"></ul>
+    </section>
+    
+    <section class = "correctGuess">
+      <h2>rätt gissningar ul, array, loop</h2>
+      <ul id="correctGuessList"></ul>
+    </section>
+    
+    <section class = "userInput">
+      <button id="randomWordButton">Slumpa ett ord</button>
+      <button id="guessButton">Gissa</button>
+      <input type="text" id="letterInput" pattern="[a-öA-Ö]" maxlength="1" placeholder="Bokstav...">
+    </section>
+  </div>
 </html>
