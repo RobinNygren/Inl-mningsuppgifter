@@ -104,9 +104,6 @@
   }
 
 
-  .guessedLetterBox ul li {
-    margin: 0.2rem;
-  }
   
   .userInputBox {
   
@@ -114,6 +111,5 @@
     grid-column: 1 / 7;
     grid-row: 6 / 7;
    
-  
-  
   }
+
