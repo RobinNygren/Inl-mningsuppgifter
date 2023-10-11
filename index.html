@@ -1,36 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>HangMan!</title>
-</head>
+  </head>
 
-<body>
-  <div class="wrapper">
+  <body>
+    <div class="wrapper">
       <div class="logo"><h1>HangMan</h1></div>
 
-      <div class="hangmanBox"><img src="images/hangman.svg" alt="HangMan" /></div>
+      <div class="hangmanBox">
+        <img src="images/hangman.svg" alt="HangMan" />
+      </div>
 
-      <div class="letterBox">
-        <!-- //korrekta gissningar -->
-        <!-- Skapa list items med loop -->
-      <ul id="correctguess"></ul>
-      </div>
-     
-      <div class="guessedLetterBox">
-        <!-- Felgissnigar -->
-         <!-- Skapa list items med loop -->
-        <ul id="correctguess"></ul>
-      </div>
-      
+      <div class="wordBox"></div>
+
+      <div class="guessedLetterBox"></div>
+
       <div class="userInputBox">
         <button id="startButton">Slumpa ett ord och starta spelet!</button>
-        <input  id="guessInput" type="text" pattern="[a-öA-Ö]" maxlength="1" placeholder="Ange bokstav">
+        <input id="guessInput" type="text" pattern="[a-öA-Ö]" maxlength="1" placeholder="Ange bokstav"/>
         <button id="guessButton">Gissa!</button>
       </div>
-  </div>
-  <script src="script.js"></script>
-</body>  
+    </div>
+    <script src="javascript.js"></script>
+  </body>
 </html>
