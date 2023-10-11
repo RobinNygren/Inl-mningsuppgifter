@@ -7,6 +7,25 @@
     <title>Document</title>
   </head>
   <body>
-    <script src="javascript.js"></script>
+    <div class="wrapper">
+      <header><h1>Hänga Gubbe</h1></header>
+      <section class="bodyMiddle">
+        <img src="images/hangman.svg" alt="" />
+      </section>
+      <section class="bodySide"><h3>Felaktiga gissningar här</h3></section>
+      <section class="bodyBottom">
+        <h2>Gissa här</h2>
+        <input
+          type="text"
+          id="letterInput"
+          pattern="[a-öA-Ö]"
+          maxlength="1"
+          placeholder="Gissa en bokstav"
+        />
+        <button class="randomWordButton">Slumpa</button>
+        <button class="guessButton">Gissa</button>
+      </section>
+      <script src="javascript.js"></script>
+    </div>
   </body>
 </html>
