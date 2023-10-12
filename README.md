@@ -15,6 +15,7 @@
 13. Skapa en funktion som startar och nollställer spelet, ska använda sig av slumpa funktionen, visa ordet funktionen och visa bokstaven funktionen.1. 14. Skapa en array, en där du lägger in alla ord du vill ha.
 _______________________________________________________________________________________________________________________
 Beskrivning
+
 Slumpa Ord:
 När användaren klickar på knappen "Slumpa ett ord och starta spelet!" slumpas ett ord från en array
 
