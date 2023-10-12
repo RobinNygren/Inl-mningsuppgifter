@@ -89,6 +89,11 @@ function checkGuess() {
     alert(`Fel gissning! ${guessesLeft} försök kvar.`);
     // ...
   }
+
+  if (guessesLeft === 0) {
+    loosePopUp.style.visibility = 'visible'
+    correctWord.textContent = randomWord;
+  }
 }
 
 
