@@ -13,9 +13,8 @@
 11. Skapa en funktion som uppdaterar bilden beroende på antalet felaktiga gissningar.
 12. Skapa en funktion som kontrollerar ifall det slumpade ordet är komplett.
 13. Skapa en funktion som startar och nollställer spelet, ska använda sig av slumpa funktionen, visa ordet funktionen och visa bokstaven funktionen.1. 14. Skapa en array, en där du lägger in alla ord du vill ha.
-
-
-Funktionalitet:
+_______________________________________________________________________________________________________________________
+Beskrivning
 
 Slumpa Ord:
 När användaren klickar på knappen "Slumpa ett ord och starta spelet!" slumpas ett ord från en array
@@ -25,7 +24,6 @@ Det slumpade ordet visas först som understreck, ett för varje bokstav i ordet.
 
 Gissning:
 Användaren kan ange en bokstav i input fältet och klicka på knappen "Gissa!" för att gissa en bokstav i ordet.
-
 Gissade bokstäver:
 Gissade bokstäver sparas i en array för att kunna hålla koll på redan gjorda gissningar. Gissade bokstäver visas i guessedLetterBox.
 
