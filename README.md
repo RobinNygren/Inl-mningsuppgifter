@@ -34,4 +34,4 @@ Försök kvar:
 Vid varje felaktig gissning minskas en räknare med antal försök kvar.
 
 Visa Hangman:
-För varje stekg som räknaren över försök kvar går ned så visas en ny del av HangMan
+För varje steg som räknaren över försök kvar går ned så visas en ny del av HangMan
