@@ -9,12 +9,17 @@ let guessesLeft = 6; // Max antal försök för hangman
 
 
 
-//Eventlistner för att starta/slump, gissa.
+//Eventlistner för att starta/slump, gissa, popups, span
 const startButton = document.querySelector('#startButton');
 startButton.addEventListener('click', startGame);
 
 const guessButton = document.querySelector('#guessButton');
 guessButton.addEventListener('click', checkGuess);
+
+const winPopUp = document.querySelector('.winPopUp');
+const loosePopUp = document.querySelector('.loosePopUp');
+
+const correctWord = document.querySelector('#correctWord');
 
 //Funktioner:--------------------------------------------------------------------------------
 
@@ -76,8 +81,7 @@ function checkGuess() {
     
     // Kontrollera om hela ordet har gissats
     if (displayedWord === randomWord) {
-      alert(`Grattis! Du gissade ordet. ${randomWord}`);
-      startGame();
+      winPopUp.style.visibility = 'visible';
     }
   } else {
     // Minska antal försök kvar och visa hangman
@@ -96,3 +100,7 @@ function checkGuess() {
 //Ifall användaren gissar på rätt ord så ska en ”Du vann”-skärm visas med en fråga om man vill spela igen,
 
 //Ifall användaren inte hinner gissa rätt ska en ”Du förlorade”-skärm visas med det rätta ordet och en fråga om man vill spela
+
+//loosePopUp.style.visibility = 'visible'; när man förlorar
+
+//spela igen knapp ska ladda om sidan
