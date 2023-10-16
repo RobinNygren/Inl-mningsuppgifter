@@ -5,7 +5,7 @@ let guessedLetters = [];
 
 let randomWord = ''; // Det slumpmässigt valda ordet
 let displayedWord = ''; // Ordet som visas på skärmen
-let guessesLeft = 5; // Max antal försök för hangman
+let guessesLeft = 6; // Max antal försök för hangman
 let currentGuess = 0; // den nuvarande gissningen
 
 
@@ -27,7 +27,7 @@ function startGame() {
 
   //Starta/nollställ spelet
   guessedLetters = [];
-  guessesLeft = 5;
+  guessesLeft = 6;
   guessedLetterBox.textContent = '';
   displayedWord = '';
   
@@ -93,9 +93,8 @@ function checkGuess() {
 }
 
 
-    const hangmanPartsOrder = ['scaffold', 'head', 'body', 'arms', 'legs'];  // skapa en array med delarna i hangman bilden
+    const hangmanPartsOrder = ['ground', 'scaffold', 'head', 'body', 'arms', 'legs'];  // skapa en array med delarna i hangman bilden
     let currentHangmanPart = 0;
-
 
     function showHangmanParts(){
         if (currentHangmanPart < hangmanPartsOrder.length){
@@ -109,6 +108,7 @@ function checkGuess() {
         }
 
     }
+    
 
     function wrongLetter(){
         
@@ -117,7 +117,7 @@ function checkGuess() {
         showHangmanParts();
 
         if (guessesLeft === 0) {
-            alert('Du förlorade! Det rätta ordet var  ${randomWord}');
+            alert(`Du förlorade! Det rätta ordet var  ${randomWord}`);
             startGame();
           }
         }
