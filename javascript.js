@@ -124,8 +124,14 @@ function checkGuess() {
         
     }
 
-    function popupWindow (){
-
+    function hideHangman() {
+      for (const partId of hangmanPartsOrder) {
+        const part = document.querySelector(#${partId});
+        if (part) {
+          part.style.visibility = 'hidden';
+        }
+      }
+      currentHangmanPart = 0; // Reset the currentHangmanPart counter
     }
 
 
@@ -135,6 +141,7 @@ function checkGuess() {
 
 
 
+  
 
 //To do!
 //Funktion för Hangman
