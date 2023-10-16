@@ -78,32 +78,53 @@ function checkGuess() {
     }
 
   } else {
-    part.style.visibility = 'visible';
-    currentHangmanPart++;
-    guessesLeft--;
+    // Minska antal försök kvar och visa hangman
+    /* guessesLeft--; */
+    alert(`Fel gissning! ${guessesLeft} försök kvar.`);
+    wrongLetter();
+    // ...
   }
+}
 
-  //förlorar
-  if ( guessesLeft === 0) {
-    loosePopUp.style.visibility = 'visible';
-    correctWord.innerText = randomWord;
 
+    const hangmanPartsOrder = ['ground', 'scaffold', 'head', 'body', 'arms', 'legs'];  // skapa en array med delarna i hangman bilden
+    let currentHangmanPart = 0;
+
+    function showHangmanParts(){
+        if (currentHangmanPart < hangmanPartsOrder.length){
+            const partId = hangmanPartsOrder[currentHangmanPart];
+            const part = document.querySelector(`#${partId}`);
+
+            if (part) {
+                part.style.visibility = 'visible';
+                currentHangmanPart++;
+            }
+        }
+
+    }
     
+
+    function wrongLetter(){
+        
+        if (guessesLeft > 0) {
+            guessesLeft--;
+        showHangmanParts();
+
+        if (guessesLeft === 0) {
+            alert(`Du förlorade! Det rätta ordet var  ${randomWord}`);
+            startGame();
+          }
+        }
+        
     }
-}
 
+    function popupWindow (){
 
-
-
-function hideHangman() {
-  for (const partId of hangmanPartsOrder) {
-    const part = document.querySelector(`#${partId}`);
-    if (part) {
-      part.style.visibility = 'hidden';
     }
-  }
-  currentHangmanPart = 0;
-}
+
+
+
+   
 
 
 
