@@ -75,7 +75,7 @@ body {
   
 }
 
-#scaffold, #head, #body, #arms, #legs {
+#ground, #scaffold, #head, #body, #arms, #legs {
   visibility: hidden;
 }
 
@@ -194,7 +194,7 @@ button:hover {
 }
 
 .modal {
-  visibility: hidden;
+  visibility:hidden;
   position: absolute;
   left: 50%;
   top: 50%;
