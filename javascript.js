@@ -1,4 +1,4 @@
-const wordList = ["hej"];
+const wordList = ["skrivbord", "elefant", "blomma", "solnedgång", "telefon", "vattenfall", "kattunge", "cyklist", "regnbåge", "klocka"];
 let guessedLetters = [];
 
 let randomWord = '';
