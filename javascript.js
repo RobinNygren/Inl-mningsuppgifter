@@ -112,21 +112,37 @@ function checkGuess() {
 
     function wrongLetter(){
         
-        if (guessesLeft > 0) {
+        if (guessesLeft >= 0) {
             guessesLeft--;
         showHangmanParts();
 
         if (guessesLeft === 0) {
             alert(`Du förlorade! Det rätta ordet var  ${randomWord}`);
+            document.querySelector('.modal').style.visibility = 'visible';
             startGame();
+            popupWindow();
           }
         }
         
     }
 
     function popupWindow (){
+        modal.style.visibility = 'visible';
+        const yesButton = document.querySelector('#yesButton');
+        yesButton.addEventListener('click', startGame);
 
     }
+
+    function hideHangman() {
+        for (const partId of hangmanPartsOrder) {
+          const part = document.querySelector(`#${partId}`);
+          if (part) {
+            part.style.visibility = 'hidden';
+          }
+        }
+        currentHangmanPart = 0; // Reset the currentHangmanPart counter
+      }
+      
 
 
 

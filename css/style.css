@@ -214,18 +214,7 @@ button:hover {
   margin-bottom: 1.6rem;
   margin-top: 0;
 }
-#btnYes {
-  color:inherit;
-    font-family:inherit;
-  font-size: inherit;
-  background: white;
-  padding: 0.3rem 3.4rem;
-  border: 3px solid black;
-  margin-right: 2.6rem;
-  box-shadow: 0 0 0 black;
-  transition: all 0.2s;
-}
-#btnNo {
+#yesButton {
   color:inherit;
     font-family:inherit;
   font-size: inherit;
@@ -237,16 +226,17 @@ button:hover {
   transition: all 0.2s;
 }
 
-.btn:last-child {
+#yesButton:last-child {
   margin: 0;
 }
 
-.btn:hover {
+#yesButton:hover {
   box-shadow: 0.4rem 0.4rem 0 black;
   transform: translate(-0.4rem, -0.4rem);
+  background-color: #2980b9;
 }
 
-.btn:active {
+#yesButton:active {
   box-shadow: 0 0 0 black;
   transform: translate(0, 0);
 }
