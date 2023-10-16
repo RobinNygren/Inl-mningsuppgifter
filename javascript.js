@@ -126,7 +126,7 @@ function checkGuess() {
 
     function hideHangman() {
       for (const partId of hangmanPartsOrder) {
-        const part = document.querySelector(#${partId});
+        const part = document.querySelector(`#${partId}`);
         if (part) {
           part.style.visibility = 'hidden';
         }
@@ -136,18 +136,15 @@ function checkGuess() {
 
 
 
-   
 
 
 
 
-  
+// To do!
+// Funktion för Hangman
 
-//To do!
-//Funktion för Hangman
+// fixa alerts -> riktiga pop ups
 
-//fixa alerts -> riktiga pop ups
+// Ifall användaren gissar på rätt ord så ska en ”Du vann”-skärm visas med en fråga om man vill spela igen,
 
-//Ifall användaren gissar på rätt ord så ska en ”Du vann”-skärm visas med en fråga om man vill spela igen,
-
-//Ifall användaren inte hinner gissa rätt ska en ”Du förlorade”-skärm visas med det rätta ordet och en fråga om man vill spela
+// Ifall användaren inte hinner gissa rätt ska en ”Du förlorade”-skärm visas med det rätta ordet och en fråga om man vill spela
