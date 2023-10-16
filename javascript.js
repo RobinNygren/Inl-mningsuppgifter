@@ -47,6 +47,8 @@ function displayWord(wordBox) {
 function checkGuess() {
   const guessedLetterBox = document.querySelector('.guessedLetterBox');
   const guessInput = document.querySelector('#guessInput');
+  const partId = hangmanPartsOrder[currentHangmanPart];
+    const part = document.querySelector(`#${partId}`);
 
   const guess = guessInput.value.toLowerCase();
 
@@ -68,29 +70,21 @@ function checkGuess() {
     }
 
   } else {
-    wrongLetter();
-  }
-}
-
-function wrongLetter() {
-  if (guessesLeft > 0) {
-    const partId = hangmanPartsOrder[currentHangmanPart];
-    const part = document.querySelector(`#${partId}`);
-
-    if (part) {
-      part.style.visibility = 'visible';
-    }
-
+    part.style.visibility = 'visible';
     currentHangmanPart++;
-
-
+    guessesLeft--;
   }
 
-  if ( currentHangmanPart === 6) {
-    alert(`Du förlorade! Det rätta ordet var ${randomWord}`);
-    startGame();
+  
+  if ( guessesLeft === 0) {
+
+    
+    
   }
 }
+
+
+
 
 function hideHangman() {
   for (const partId of hangmanPartsOrder) {
