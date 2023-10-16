@@ -1,9 +1,10 @@
-const wordList = ["skrivbord", "elefant", "blomma", "solnedgång", "telefon", "vattenfall", "kattunge", "cyklist", "regnbåge", "klocka"];
+const wordList = ["hej"];
 let guessedLetters = [];
 
 let randomWord = '';
 let displayedWord = '';
 let guessesLeft = 6;
+let currentGuess = 0;
 let currentHangmanPart = 0;
 
 const hangmanPartsOrder = ['ground', 'scaffold', 'head', 'body', 'arms', 'legs'];
@@ -15,25 +16,21 @@ startButton.addEventListener('click', startGame);
 const guessButton = document.querySelector('#guessButton');
 guessButton.addEventListener('click', checkGuess);
 
-const playAgainWin = document.querySelector('#playAgainWin');
+
+
+const playAgainWin = document.querySelector('#playAgainButtonWin');
 playAgainWin.addEventListener('click', () => {
   const winPopUp = document.querySelector('.winPopUp');
-  winPopUp.style.visibility = 'hidden'; 
-  startGame();  
+  winPopUp.style.visibility = 'hidden';  // Hide the win pop-up
+  startGame();  // Start a new game
 });
 
-const playAgainLoose = document.querySelector('#playAgainLoose');
+const playAgainLoose = document.querySelector('#playAgainButtonLoose');
 playAgainLoose.addEventListener('click', () => {
   const loosePopUp = document.querySelector('.loosePopUp');
-  loosePopUp.style.visibility = 'hidden';  
-  startGame();  
+  loosePopUp.style.visibility = 'hidden';  // Hide the lose pop-up
+  startGame();  // Start a new game
 });
- 
-
-
-
-
-
 
 
 
@@ -93,63 +90,33 @@ function checkGuess() {
     }
 
   } else {
-    // Minska antal försök kvar och visa hangman
-    /* guessesLeft--; */
-    alert(`Fel gissning! ${guessesLeft} försök kvar.`);
-    wrongLetter();
-    // ...
+    part.style.visibility = 'visible';
+    currentHangmanPart++;
+    guessesLeft--;
   }
+
+  //förlorar
+  if ( guessesLeft === 0) {
+    loosePopUp.style.visibility = 'visible';
+    correctWord.innerText = randomWord;
+
+    
+    }
 }
 
 
-    const hangmanPartsOrder = ['ground', 'scaffold', 'head', 'body', 'arms', 'legs'];  // skapa en array med delarna i hangman bilden
-    let currentHangmanPart = 0;
 
-    function showHangmanParts(){
-        if (currentHangmanPart < hangmanPartsOrder.length){
-            const partId = hangmanPartsOrder[currentHangmanPart];
-            const part = document.querySelector(`#${partId}`);
 
-            if (part) {
-                part.style.visibility = 'visible';
-                currentHangmanPart++;
-            }
-        }
-
+function hideHangman() {
+  for (const partId of hangmanPartsOrder) {
+    const part = document.querySelector(`#${partId}`);
+    if (part) {
+      part.style.visibility = 'hidden';
     }
-    
-
-    function wrongLetter(){
-        
-        if (guessesLeft > 0) {
-            guessesLeft--;
-        showHangmanParts();
-
-        if (guessesLeft === 0) {
-            alert(`Du förlorade! Det rätta ordet var  ${randomWord}`);
-            startGame();
-          }
-        }
-        
-    }
-
-    function popupWindow (){
-
-    }
-
-
-
-   
+  }
+  currentHangmanPart = 0;
+}
 
 
 
 
-
-// To do!
-// Funktion för Hangman
-
-// fixa alerts -> riktiga pop ups
-
-// Ifall användaren gissar på rätt ord så ska en ”Du vann”-skärm visas med en fråga om man vill spela igen,
-
-// Ifall användaren inte hinner gissa rätt ska en ”Du förlorade”-skärm visas med det rätta ordet och en fråga om man vill spela
