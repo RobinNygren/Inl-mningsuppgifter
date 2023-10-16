@@ -117,7 +117,7 @@ function checkGuess() {
         showHangmanParts();
 
         if (guessesLeft === 0) {
-            alert('Du förlorade! Det rätta ordet var  ${randomWord}');
+            alert(`Du förlorade! Det rätta ordet var  ${randomWord}`);
             startGame();
           }
         }
