@@ -1,10 +1,9 @@
-const wordList = ["hej"];
+const wordList = ["skrivbord", "elefant", "blomma", "solnedgång", "telefon", "vattenfall", "kattunge", "cyklist", "regnbåge", "klocka"];
 let guessedLetters = [];
 
 let randomWord = '';
 let displayedWord = '';
 let guessesLeft = 6;
-let currentGuess = 0;
 let currentHangmanPart = 0;
 
 const hangmanPartsOrder = ['ground', 'scaffold', 'head', 'body', 'arms', 'legs'];
@@ -15,6 +14,22 @@ startButton.addEventListener('click', startGame);
 
 const guessButton = document.querySelector('#guessButton');
 guessButton.addEventListener('click', checkGuess);
+
+const playAgainWin = document.querySelector('#playAgainWin');
+playAgainWin.addEventListener('click', () => {
+  const winPopUp = document.querySelector('.winPopUp');
+  winPopUp.style.visibility = 'hidden'; 
+  startGame();  
+});
+
+const playAgainLoose = document.querySelector('#playAgainLoose');
+playAgainLoose.addEventListener('click', () => {
+  const loosePopUp = document.querySelector('.loosePopUp');
+  loosePopUp.style.visibility = 'hidden';  
+  startGame();  
+});
+ 
+
 
 
 
