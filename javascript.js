@@ -16,6 +16,13 @@ startButton.addEventListener('click', startGame);
 const guessButton = document.querySelector('#guessButton');
 guessButton.addEventListener('click', checkGuess);
 
+
+
+
+
+
+
+
 function startGame() {
   const guessedLetterBox = document.querySelector('.guessedLetterBox');
   const wordBox = document.querySelector('.wordBox');
@@ -45,11 +52,13 @@ function displayWord(wordBox) {
 }
 
 function checkGuess() {
+  const winPopUp = document.querySelector('.winPopUp');
+  const loosePopUp = document.querySelector('.loosePopUp');
   const guessedLetterBox = document.querySelector('.guessedLetterBox');
   const guessInput = document.querySelector('#guessInput');
   const partId = hangmanPartsOrder[currentHangmanPart];
-    const part = document.querySelector(`#${partId}`);
-
+  const correctWord = document.querySelector('#correctWord');
+  const part = document.querySelector(`#${partId}`);
   const guess = guessInput.value.toLowerCase();
 
   if (guessedLetters.includes(guess)) {
@@ -64,9 +73,8 @@ function checkGuess() {
     const wordBox = document.querySelector('.wordBox');
     displayWord(wordBox);
 
-    if (displayedWord === randomWord) {
-      alert(`Grattis! Du gissade ordet. ${randomWord}`);
-      startGame();
+    if (displayedWord === randomWord) {  //Vinner
+     winPopUp.style.visibility = 'visible';
     }
 
   } else {
@@ -75,12 +83,13 @@ function checkGuess() {
     guessesLeft--;
   }
 
-  
+  //förlorar
   if ( guessesLeft === 0) {
+    loosePopUp.style.visibility = 'visible';
+    correctWord.innerText = randomWord;
 
     
-    
-  }
+    }
 }
 
 
