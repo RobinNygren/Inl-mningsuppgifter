@@ -90,13 +90,20 @@
         />
         <button id="guessButton">Gissa!</button>
       </div>
-      <div class="modal">
-        <p class="message">Spelet är över! Vill du spela igen?</p>
-        <div class="options">
-          <button id="yesButton">Ja</button>
-        </div>
+
+     
+     
+      <div class="winPopUp">
+        <p> Du vann! Vill du spela igen?</p>
+        <button id="playAgain">Spela igen</button>
       </div>
-    </div>
+
+
+      <div class="loosePopUp">
+        <p>Du förlorade! Ordet var: <span id="correctWord"></span></p>
+        <button id="playAgain">Spela igen</button>
+      </div>
+    
     <script src="javascript.js"></script>
   </body>
 </html>
