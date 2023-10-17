@@ -30,6 +30,18 @@ playAgainLoose.addEventListener('click', () => {
   const loosePopUp = document.querySelector('.loosePopUp');
   loosePopUp.style.visibility = 'hidden';  // Hide the lose pop-up
   startGame();  // Start a new game
+});const playAgainWin = document.querySelector('#playAgainButtonWin');
+playAgainWin.addEventListener('click', () => {
+  const winPopUp = document.querySelector('.winPopUp');
+  winPopUp.style.visibility = 'hidden';  // Hide the win pop-up
+  startGame();  // Start a new game
+});
+
+const playAgainLoose = document.querySelector('#playAgainButtonLoose');
+playAgainLoose.addEventListener('click', () => {
+  const loosePopUp = document.querySelector('.loosePopUp');
+  loosePopUp.style.visibility = 'hidden';  // Hide the lose pop-up
+  startGame();  // Start a new game
 });
 
 
