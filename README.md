@@ -1,3 +1,5 @@
+Kung-Fu Zebras - Johan Rydell, Robin Nygren.
+
 Hänga gubbe - inlämningssuppgiftSyfte
 Kunna applicera datalogiskt tänkande och gå från idé till kod
 Visa förståelse och kunna använda sig av programmeringens byggstenar (variabler, villkor, funktioner, loopar etc)

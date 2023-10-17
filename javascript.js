@@ -1,6 +1,6 @@
 const wordList = ["skrivbord", "häst", "blomma", "solnedgång", "telefon", "vattenfall", "kattunge", "cyklist", "regnbåge", "klocka"];
 let guessedLetters = [];
-
+  
 let randomWord = '';
 let hiddenWord = '';
 let guessesLeft = 6;
