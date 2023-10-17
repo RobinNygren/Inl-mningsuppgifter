@@ -2,7 +2,7 @@ const wordList = ["hej"];
 let guessedLetters = [];
 
 let randomWord = '';
-let displayedWord = '';
+let hiddenWord = '';
 let guessesLeft = 6;
 let currentGuess = 0;
 let currentHangmanPart = 0;
@@ -21,57 +21,59 @@ guessButton.addEventListener('click', checkGuess);
 const playAgainWin = document.querySelector('#playAgainButtonWin');
 playAgainWin.addEventListener('click', () => {
   const winPopUp = document.querySelector('.winPopUp');
-  winPopUp.style.visibility = 'hidden';  // Hide the win pop-up
-  startGame();  // Start a new game
+  winPopUp.style.visibility = 'hidden';  // dölj win pop-up
+  startGame();  // Starta nytt spel
 });
 
 const playAgainLoose = document.querySelector('#playAgainButtonLoose');
 playAgainLoose.addEventListener('click', () => {
   const loosePopUp = document.querySelector('.loosePopUp');
-  loosePopUp.style.visibility = 'hidden';  // Hide the lose pop-up
-  startGame();  // Start a new game
+  loosePopUp.style.visibility = 'hidden';  // dölj lose pop-up
+  startGame();  // Starta nytt spel
 });
 
-
-
-
 function startGame() {
-  const guessedLetterBox = document.querySelector('.guessedLetterBox');
-  const wordBox = document.querySelector('.wordBox');
+  const guessedLetterDisplay = document.querySelector('.guessedLetterDisplay');
+  const wordDisplay = document.querySelector('.wordDisplay');
 
   guessedLetters = [];
   guessesLeft = 6;
-  guessedLetterBox.textContent = '';
-  displayedWord = '';
+  guessedLetterDisplay.textContent = '';
+  hiddenWord = '';
 
   randomWord = wordList[Math.floor(Math.random() * wordList.length)].toLowerCase();
 
-  displayWord(wordBox);
+  hideWord(wordDisplay);
   hideHangman();
 }
 
-function displayWord(wordBox) {
-  displayedWord = '';
+function hideWord(wordDisplay) {
+  hiddenWord = '';
   for (const letter of randomWord) {
     if (guessedLetters.includes(letter)) {
-      displayedWord += letter;
+      hiddenWord += letter;
     } else {
-      displayedWord += '_ ';
+      hiddenWord += '_ ';
     }
   }
 
-  wordBox.textContent = displayedWord;
+  wordDisplay.textContent = hiddenWord;
 }
 
 function checkGuess() {
   const winPopUp = document.querySelector('.winPopUp');
   const loosePopUp = document.querySelector('.loosePopUp');
-  const guessedLetterBox = document.querySelector('.guessedLetterBox');
+  const guessedLetterDisplay = document.querySelector('.guessedLetterDisplay');
   const guessInput = document.querySelector('#guessInput');
   const partId = hangmanPartsOrder[currentHangmanPart];
   const correctWord = document.querySelector('#correctWord');
   const part = document.querySelector(`#${partId}`);
   const guess = guessInput.value.toLowerCase();
+
+  if (!/^[a-zA-ZåäöÅÄÖ]$/i.test(guess)) {
+    alert('Använd endast bokstäver.');
+    return;
+  }
 
   if (guessedLetters.includes(guess)) {
     alert('Du har redan gissat denna bokstav. Gissa igen!');
@@ -79,13 +81,13 @@ function checkGuess() {
   }
 
   guessedLetters.push(guess);
-  guessedLetterBox.textContent = guessedLetters.join(' ');
+  guessedLetterDisplay.textContent = guessedLetters.join(' ');
 
   if (randomWord.includes(guess)) {
-    const wordBox = document.querySelector('.wordBox');
-    displayWord(wordBox);
+    const wordDisplay = document.querySelector('.wordDisplay');
+    hideWord(wordDisplay);
 
-    if (displayedWord === randomWord) {  //Vinner
+    if (hiddenWord === randomWord) {  //Vinner
      winPopUp.style.visibility = 'visible';
     }
 
@@ -104,9 +106,6 @@ function checkGuess() {
     }
 }
 
-
-
-
 function hideHangman() {
   for (const partId of hangmanPartsOrder) {
     const part = document.querySelector(`#${partId}`);
@@ -116,7 +115,6 @@ function hideHangman() {
   }
   currentHangmanPart = 0;
 }
-
 
 
 
